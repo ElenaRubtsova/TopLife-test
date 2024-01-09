@@ -6,8 +6,7 @@
   <style>
     .container {
       display: grid;
-      /*grid-template-columns: repeat(2, 1fr);*/
-      min-width: 300px; /* Пример минимальной ширины блока */
+      min-width: 300px;
     }
     @media (max-width: 767px) {
       .container {
@@ -30,7 +29,6 @@
         align-items: flex-end;
         justify-content: center;
         overflow: hidden;
-        height: 321px;
       }
       .block:last-child:nth-child(odd) .half.image img {
         width: 100%;
@@ -55,7 +53,6 @@
     }
     .block .half.info {
       background: white;
-      /*margin: 10px;*/
     }
     .block .half.info .info-wrapper {
       padding: 30px;
@@ -90,48 +87,45 @@
     .block .half.image {
       max-height: 474px;
       overflow: hidden;
+      background-size: cover;
+      background-position: center;
     }
     .block .half.image img {
       height: 100%;
       overflow: hidden;
     }
-    .block .half.info .info-wrapper h3.left::before {
-    /*position: absolute;
-    margin-left: -40px;
-    width: 30px;
-    content: url(icons/rectangle-left.png);*/
+
+    .rectangle {
+      position: absolute;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 25px solid white;
     }
-.rectangle {
-  position: absolute;
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 25px solid white;
-}
-.rectangle.left {
-  transform: rotate(-90deg);
-  margin-left: -60px;
-  margin-top: 10px;
-}
-.rectangle.right {
-  transform: rotate(90deg);
-  margin-left: -4px;
-  margin-top: 44px
-}
-button.round {
-  height: 55px;
-  width: 55px;
-  border-radius: 30px;
-  border: 1px solid #004583;
-  background: white;
-}
-button.round img {
-  position: relative;
-  top: 2px;
-}
-</style>
+    .rectangle.left {
+      transform: rotate(-90deg);
+      margin-left: -60px;
+      margin-top: 10px;
+    }
+    .rectangle.right {
+      transform: rotate(90deg);
+      margin-left: -4px;
+      margin-top: 44px
+    }
+    button.round {
+      height: 55px;
+      width: 55px;
+      border-radius: 30px;
+      border: 1px solid #004583;
+      background: white;
+    }
+    button.round img {
+      position: relative;
+      top: 2px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -139,10 +133,7 @@ button.round img {
   <!-- left picture -->
     <div class="block left">
       <!-- left half -->
-      <div class="half image" style="background-image: url(img/pic1.png); background-size: cover;
-  background-position: center;">
-        <!-- <img src="img/pic1.png" alt="Your Image"> -->
-      </div>
+      <div class="half image" style="background-image: url(img/pic1.png);"></div>
       <!-- /left half -->
 
       <!-- right half -->
@@ -160,7 +151,7 @@ button.round img {
             Цены от: 42.000р
           </div>
           <button class="round">
-            <img src="icons/arrow-left.svg" width="16" height="16" alt="Поиск">
+            <img src="icons/arrow-left.svg" width="16" height="16" alt="Перейти">
           </button>
         </div>
       </div>
@@ -171,9 +162,7 @@ button.round img {
   <!-- left picture -->
     <div class="block left">
       <!-- left half -->
-      <div class="half image">
-        <img src="img/pic2.png" alt="Your Image">
-      </div>
+      <div class="half image" style="background-image: url(img/pic2.png);"></div>
       <!-- /left half -->
 
       <!-- right half -->
@@ -191,7 +180,7 @@ button.round img {
             Цены от: 42.000р
           </div>
           <button class="round">
-            <img src="icons/arrow-left.svg" width="16" height="16" alt="Поиск">
+            <img src="icons/arrow-left.svg" width="16" height="16" alt="Перейти">
           </button>
         </div>
       </div>
@@ -215,16 +204,15 @@ button.round img {
             Цены от: 42.000р
           </div>
           <button class="round">
-            <img src="icons/arrow-right.svg" width="16" height="16" alt="Поиск">
+            <img src="icons/arrow-right.svg" width="16" height="16" alt="Перейти">
           </button>
         </div>
       </div>
       <!-- /left half -->
 
       <!-- right half -->
-      <div class="half image">
+      <div class="half image" style="background-image: url(img/pic3.png);">
           <div class="rectangle right"></div>
-        <img src="img/pic3.png" alt="Your Image">
       </div>
       <!-- /right half -->
     </div>
@@ -246,16 +234,15 @@ button.round img {
             Цены от: 42.000р
           </div>
           <button class="round">
-            <img src="icons/arrow-right.svg" width="16" height="16" alt="Поиск">
+            <img src="icons/arrow-right.svg" width="16" height="16" alt="Перейти">
           </button>
         </div>
       </div>
       <!-- /left half -->
 
       <!-- right half -->
-      <div class="half image">
+      <div class="half image" style="background-image: url(img/pic4.png);">
           <div class="rectangle right"></div>
-        <img src="img/pic4.png" alt="Your Image">
       </div>
       <!-- /right half -->
     </div>
@@ -264,8 +251,7 @@ button.round img {
   <!-- left picture -->
     <div class="block left">
       <!-- left half -->
-      <div class="half image">
-        <img src="img/pic5.png" alt="Your Image">
+      <div class="half image" style="background-image: url(img/pic5.png); background-position: bottom;">
       </div>
       <!-- /left half -->
 
@@ -284,7 +270,7 @@ button.round img {
             Цены от: 42.000р
           </div>
           <button class="round">
-            <img src="icons/arrow-left.svg" width="16" height="16" alt="Поиск">
+            <img src="icons/arrow-left.svg" width="16" height="16" alt="Перейти">
           </button>
         </div>
       </div>
@@ -304,7 +290,6 @@ function rearrangeBlocksOnMobile() {
 
   // Если разрешение экрана мобильное
   if (windowWidth < 768) {
-    // Очищаем контейнер
     container.innerHTML = '';
 
     // Переставляем блоки чередуясь через 1 элемент
@@ -319,7 +304,6 @@ function rearrangeBlocksOnMobile() {
   }
   // Если разрешение экрана больше мобильного
   else {
-    // Очищаем контейнер
     container.innerHTML = '';
 
     // Переставляем блоки чередуясь через 2 элемента
@@ -336,7 +320,6 @@ function rearrangeBlocksOnMobile() {
   }
 }
 
-// Вызываем функцию при загрузке страницы и при изменении размера окна
 window.addEventListener('load', rearrangeBlocksOnMobile);
 window.addEventListener('resize', rearrangeBlocksOnMobile);
   </script>
